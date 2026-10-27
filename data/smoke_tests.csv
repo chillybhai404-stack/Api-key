@@ -1,0 +1,31 @@
+text,expected_labels
+That sign-in screen closes every time I open it.,account_login|bug_report
+Could you give us a night theme?,feature_request
+I need the app to work without an internet connection.,feature_request
+I received two receipts for one purchase.,billing_payment|complaint
+"The new release is brilliant, although the animations stutter on my phone.",positive_feedback|performance_issue
+How can I erase the personal information you saved about me?,privacy_concern
+Please show me the steps to reset a forgotten login password.,password_reset|how_to
+What does this Python traceback mean?,coding_help|question
+Would you check my algebra solution?,math_help
+Turn these notes into a concise recap.,summarization_request
+Can you make the interface usable with just a keyboard?,accessibility_request|feature_request
+Does your app have a Kashmiri translation?,language_request|question
+Can I get an update on the parcel I ordered?,order_status|delivery_shipping
+Reserve a slot for our project call next Tuesday.,booking_scheduling
+Remind me tomorrow morning to review the code.,reminder_request
+The spreadsheet export contains nonsense values.,bug_report|data_export
+That explanation went completely over my head.,confusion
+This app drains my battery and becomes laggy.,performance_issue
+Compare a used MacBook and a Windows laptop for coding.,comparison_request|product_recommendation
+Have a great evening; I am heading out.,farewell
+I really appreciate how clearly you explained it.,gratitude
+"Wait, I meant to ask about web APIs instead.",clarification
+How can I change the picture on my profile?,how_to
+Please turn off renewal for the paid membership.,cancellation
+I have to get this sorted before the deadline in an hour.,urgency
+Can the buttons be bigger for people using touch screens?,accessibility_request
+Which of these two designs is easier to understand?,comparison_request
+Will it be raining in Srinagar tomorrow?,weather_request
+Show me all the files named budget from last month.,search_request
+Can I download everything you have stored on my account?,data_export
