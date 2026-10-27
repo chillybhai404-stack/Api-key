@@ -1,1 +1,470 @@
-
+[
+  {
+    "label": "greeting",
+    "description": "Opening or starting a conversation",
+    "example_messages": [
+      "Hi",
+      "Hello",
+      "Hey there"
+    ]
+  },
+  {
+    "label": "farewell",
+    "description": "Ending a conversation",
+    "example_messages": [
+      "Bye",
+      "Goodbye",
+      "See you later"
+    ]
+  },
+  {
+    "label": "gratitude",
+    "description": "Expressing thanks",
+    "example_messages": [
+      "Thanks",
+      "Thank you so much",
+      "Thanks for the help"
+    ]
+  },
+  {
+    "label": "apology",
+    "description": "Apologizing or acknowledging a mistake",
+    "example_messages": [
+      "Sorry",
+      "I'm sorry about that",
+      "My mistake"
+    ]
+  },
+  {
+    "label": "small_talk",
+    "description": "Casual conversation",
+    "example_messages": [
+      "How are you doing?",
+      "How's your day going?",
+      "What's new?"
+    ]
+  },
+  {
+    "label": "joke_request",
+    "description": "Requesting humor or a joke",
+    "example_messages": [
+      "Tell me a joke",
+      "Make me laugh",
+      "Give me a funny joke"
+    ]
+  },
+  {
+    "label": "identity_question",
+    "description": "Asking who the assistant is",
+    "example_messages": [
+      "Who are you?",
+      "What should I call you?",
+      "Are you a bot?"
+    ]
+  },
+  {
+    "label": "capability_question",
+    "description": "Asking what the assistant can do",
+    "example_messages": [
+      "What can you do?",
+      "How can you help me?",
+      "What features do you support?"
+    ]
+  },
+  {
+    "label": "question",
+    "description": "General question",
+    "example_messages": [
+      "Can you answer a question for me?",
+      "I have a question",
+      "Could you explain this?"
+    ]
+  },
+  {
+    "label": "information_request",
+    "description": "Requesting facts or details",
+    "example_messages": [
+      "Give me more information about this feature",
+      "I need the details",
+      "Explain the available options"
+    ]
+  },
+  {
+    "label": "how_to",
+    "description": "Requesting instructions or steps",
+    "example_messages": [
+      "How do I get started?",
+      "Show me how to do this",
+      "Give me step by step instructions"
+    ]
+  },
+  {
+    "label": "coding_help",
+    "description": "Programming or debugging help",
+    "example_messages": [
+      "Help me debug this Python code",
+      "Explain this JavaScript error",
+      "Write a Python function for me"
+    ]
+  },
+  {
+    "label": "writing_help",
+    "description": "Writing, editing, grammar, or drafting help",
+    "example_messages": [
+      "Help me rewrite this paragraph",
+      "Proofread my description",
+      "Make this message more professional"
+    ]
+  },
+  {
+    "label": "translation_request",
+    "description": "Requesting translation between languages",
+    "example_messages": [
+      "Translate this into English",
+      "Translate this message to Urdu",
+      "How do I say this in Hindi?"
+    ]
+  },
+  {
+    "label": "summarization_request",
+    "description": "Requesting a concise summary",
+    "example_messages": [
+      "Summarize this article",
+      "Give me the key points only",
+      "Make a short summary of these notes"
+    ]
+  },
+  {
+    "label": "math_help",
+    "description": "Mathematics help",
+    "example_messages": [
+      "Help me solve this equation",
+      "Explain how to calculate the percentage",
+      "Check my algebra steps"
+    ]
+  },
+  {
+    "label": "creative_request",
+    "description": "Brainstorming or creative generation",
+    "example_messages": [
+      "Give me a fresh app idea",
+      "Brainstorm names for my project",
+      "Write a short science fiction scene"
+    ]
+  },
+  {
+    "label": "learning_help",
+    "description": "Teaching, practice, quizzes, or study guidance",
+    "example_messages": [
+      "Teach me the basics of machine learning",
+      "Explain this topic for a beginner",
+      "Make a study plan for this chapter"
+    ]
+  },
+  {
+    "label": "command",
+    "description": "Directing an action to be performed",
+    "example_messages": [
+      "Open the settings page",
+      "Show the dashboard",
+      "Sort the list by date"
+    ]
+  },
+  {
+    "label": "feature_request",
+    "description": "Suggesting a product or app feature",
+    "example_messages": [
+      "Please add a dark mode",
+      "I would like a search filter",
+      "Could you add offline support?"
+    ]
+  },
+  {
+    "label": "positive_feedback",
+    "description": "Positive feedback or praise",
+    "example_messages": [
+      "I love this app",
+      "This is really useful",
+      "Great job on the new update"
+    ]
+  },
+  {
+    "label": "negative_feedback",
+    "description": "Negative opinion or dissatisfaction",
+    "example_messages": [
+      "I don't like this update",
+      "The new design is confusing",
+      "This feature isn't useful to me"
+    ]
+  },
+  {
+    "label": "complaint",
+    "description": "Expressing a complaint or unresolved problem",
+    "example_messages": [
+      "I've been waiting for a response for days",
+      "The service has been unreliable lately",
+      "I keep getting charged unexpectedly"
+    ]
+  },
+  {
+    "label": "bug_report",
+    "description": "Reporting a defect or broken behavior",
+    "example_messages": [
+      "The app crashes when I sign in",
+      "The save button does nothing",
+      "I found a bug in the latest version"
+    ]
+  },
+  {
+    "label": "account_login",
+    "description": "Login, sign-in, or account access problem",
+    "example_messages": [
+      "I can't log into my account",
+      "My sign-in keeps failing",
+      "The login page won't accept my details"
+    ]
+  },
+  {
+    "label": "password_reset",
+    "description": "Password recovery or password change",
+    "example_messages": [
+      "I forgot my password",
+      "Send me a password reset link",
+      "How can I change my password?"
+    ]
+  },
+  {
+    "label": "billing_payment",
+    "description": "Payment, invoice, billing, or charge issue",
+    "example_messages": [
+      "My payment failed",
+      "I was charged twice",
+      "The invoice amount is incorrect"
+    ]
+  },
+  {
+    "label": "refund_request",
+    "description": "Requesting money back or disputing a purchase",
+    "example_messages": [
+      "I want a refund",
+      "Please refund my last payment",
+      "How do I request my money back?"
+    ]
+  },
+  {
+    "label": "cancellation",
+    "description": "Stopping a plan, membership, booking, or account",
+    "example_messages": [
+      "Cancel my subscription",
+      "I want to close my account",
+      "How do I stop automatic renewal?"
+    ]
+  },
+  {
+    "label": "order_status",
+    "description": "Asking for order or purchase status",
+    "example_messages": [
+      "Where is my order?",
+      "Track my purchase",
+      "Has my order shipped yet?"
+    ]
+  },
+  {
+    "label": "delivery_shipping",
+    "description": "Delivery, shipment, courier, or parcel issue",
+    "example_messages": [
+      "My package is late",
+      "The delivery hasn't arrived",
+      "The courier couldn't find my address"
+    ]
+  },
+  {
+    "label": "product_recommendation",
+    "description": "Requesting suggestions among products or tools",
+    "example_messages": [
+      "Recommend a good budget phone",
+      "Which laptop would suit a student?",
+      "Help me choose between these two products"
+    ]
+  },
+  {
+    "label": "booking_scheduling",
+    "description": "Scheduling, rescheduling, or booking time",
+    "example_messages": [
+      "Book an appointment for Friday",
+      "Schedule a meeting for tomorrow",
+      "Move my appointment to 3 PM"
+    ]
+  },
+  {
+    "label": "reminder_request",
+    "description": "Requesting a reminder",
+    "example_messages": [
+      "Remind me to submit the report",
+      "Set a reminder for 6 PM",
+      "Don't let me forget my appointment"
+    ]
+  },
+  {
+    "label": "search_request",
+    "description": "Asking to find or search for information or records",
+    "example_messages": [
+      "Search for Python tutorials",
+      "Find all files named report",
+      "Look up the latest project entry"
+    ]
+  },
+  {
+    "label": "navigation_help",
+    "description": "Asking where a page, control, or setting is located",
+    "example_messages": [
+      "Where is the settings menu?",
+      "How do I get back to the home screen?",
+      "I can't find the profile page"
+    ]
+  },
+  {
+    "label": "confirmation",
+    "description": "Confirming, approving, or agreeing",
+    "example_messages": [
+      "Yes",
+      "Yes, that's correct",
+      "Exactly"
+    ]
+  },
+  {
+    "label": "rejection",
+    "description": "Rejecting, declining, or stopping a proposed action",
+    "example_messages": [
+      "No",
+      "No thanks",
+      "That is not correct"
+    ]
+  },
+  {
+    "label": "clarification",
+    "description": "Correcting or clarifying what was meant",
+    "example_messages": [
+      "What do you mean by that?",
+      "Can you explain that part again?",
+      "I meant the other option"
+    ]
+  },
+  {
+    "label": "confusion",
+    "description": "Expressing confusion or lack of understanding",
+    "example_messages": [
+      "I'm confused",
+      "I don't understand this",
+      "This makes no sense to me"
+    ]
+  },
+  {
+    "label": "urgency",
+    "description": "Indicating a time-critical or urgent need",
+    "example_messages": [
+      "This is urgent",
+      "I need a solution right now",
+      "Please handle this as soon as possible"
+    ]
+  },
+  {
+    "label": "privacy_concern",
+    "description": "Questions or concerns about personal data and privacy",
+    "example_messages": [
+      "What data do you collect about me?",
+      "Can I delete my personal data?",
+      "Who can see my information?"
+    ]
+  },
+  {
+    "label": "security_concern",
+    "description": "Account safety, suspicious activity, or security issues",
+    "example_messages": [
+      "I think someone accessed my account",
+      "Is my data encrypted?",
+      "I received a suspicious login alert"
+    ]
+  },
+  {
+    "label": "accessibility_request",
+    "description": "Accessibility or inclusive-interface request",
+    "example_messages": [
+      "Please add screen reader support",
+      "The text is too small to read",
+      "Can you improve keyboard navigation?"
+    ]
+  },
+  {
+    "label": "language_request",
+    "description": "Language preference or language support",
+    "example_messages": [
+      "Can I change the app language?",
+      "Add Urdu language support",
+      "I want the interface in Hindi"
+    ]
+  },
+  {
+    "label": "troubleshooting",
+    "description": "Requesting help diagnosing or fixing a problem",
+    "example_messages": [
+      "Help me troubleshoot this problem",
+      "What should I try first?",
+      "Walk me through diagnosing the issue"
+    ]
+  },
+  {
+    "label": "data_export",
+    "description": "Downloading, exporting, or backing up data",
+    "example_messages": [
+      "Export my data to CSV",
+      "Download all my records",
+      "Can I export this report as PDF?"
+    ]
+  },
+  {
+    "label": "performance_issue",
+    "description": "Slowness, lag, battery use, or performance problem",
+    "example_messages": [
+      "The app is extremely slow",
+      "The page takes forever to load",
+      "Scrolling is laggy on my phone"
+    ]
+  },
+  {
+    "label": "weather_request",
+    "description": "Requesting weather information",
+    "example_messages": [
+      "What's the weather today?",
+      "Will it rain tomorrow?",
+      "Give me the weather forecast for this weekend"
+    ]
+  },
+  {
+    "label": "opinion_request",
+    "description": "Asking for an assessment or opinion",
+    "example_messages": [
+      "What do you think of this idea?",
+      "Give me your assessment of this design",
+      "Which version seems clearer?"
+    ]
+  },
+  {
+    "label": "comparison_request",
+    "description": "Comparing two or more options",
+    "example_messages": [
+      "Compare these two options",
+      "What are the differences between A and B?",
+      "Make a pros and cons comparison"
+    ]
+  },
+  {
+    "label": "other",
+    "description": "Fallback for unclear or out-of-scope text",
+    "example_messages": [
+      "The blue box in the second screen looks odd",
+      "Here is a random thought",
+      "I'm testing the classifier"
+    ]
+  }
+]
