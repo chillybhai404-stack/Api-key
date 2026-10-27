@@ -1,0 +1,33 @@
+AXU INTERACTION INTELLIGENCE v2 — START HERE
+
+WHAT THIS IS
+A text-intent classifier with 52 labels and 7,000+ synthetic training examples. It can assign more than one label to a mixed message. It is not a generative chatbot and does not compose answers by itself.
+
+FASTEST TEST ON PYDROID 3
+1. Extract the ZIP.
+2. Keep the data/ and models/ folders beside the .py files.
+3. Open predict.py in Pydroid and tap Run.
+4. Try: I love this app, but the login keeps crashing
+5. Type quit to stop.
+
+The ZIP includes a trained model, so you do not need to train it before trying it. If loading fails because of a scikit-learn version mismatch, open train.py and tap Run to rebuild the model on your device; this can take a while.
+
+TRY THE BROWSER DEMO / API
+1. Make sure FastAPI and Uvicorn are installed (requirements.txt lists all dependencies).
+2. Open api.py in Pydroid and tap Run.
+3. On the same phone, open http://127.0.0.1:8000/ for the demo or http://127.0.0.1:8000/docs for interactive API testing.
+4. Keep Pydroid's server process running while testing.
+
+USEFUL FILES
+- models/axu_interaction_model.joblib : the trained model
+- data/interactions.csv             : 7,000+ synthetic labelled examples
+- data/intents.json                 : names and descriptions of the labels
+- data/smoke_tests.csv              : separate basic test phrases
+- train.py                          : train/retrain the model
+- predict.py                        : command-line tester
+- api.py                            : FastAPI server and browser demo
+- evaluate_smoke.py                 : run the included sanity checks
+- build_dataset.py                  : regenerate the synthetic starter dataset
+
+LIMITATION
+This is a useful foundation for routing messages or sorting app feedback. Its dataset is synthetic and partly template-generated, so the displayed scores are not calibrated real-world probabilities. Add varied, correctly labelled examples from your intended use case and validate on unseen real messages before relying on it.
