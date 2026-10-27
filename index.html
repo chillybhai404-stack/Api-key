@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>AXU Interaction Intelligence V2</title>
+<style>
+:root{color-scheme:light;--bg:#fff;--sidebar:#f9f9f9;--text:#0d0d0d;--muted:#6b6b6b;--line:#e5e5e5;--soft:#f4f4f4;--accent:#222;--accent-hover:#333;--user:#f4f4f4;--good:#237a48;--bad:#b42318;--shadow:0 2px 14px #0000000a}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{background:var(--bg);color:var(--text);font:15px/1.55 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}button,textarea,input{font:inherit}button{color:inherit;cursor:pointer}button:focus-visible,a:focus-visible,textarea:focus-visible{outline:2px solid #777;outline-offset:3px}.app{height:100dvh;display:flex;overflow:hidden}.sidebar{width:260px;flex:0 0 260px;background:var(--sidebar);display:flex;flex-direction:column;padding:12px;transition:margin-left .22s ease,width .22s ease;overflow:hidden}.sidebar.hidden{margin-left:-260px}.side-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:18px}.brandmark{height:34px;width:34px;display:grid;place-items:center;border:1px solid var(--line);border-radius:11px;font-size:14px;font-weight:800;letter-spacing:-.05em;background:#fff}.icon-button{border:0;background:transparent;border-radius:9px;width:38px;height:38px;display:grid;place-items:center;color:#4f4f4f}.icon-button:hover{background:#ececec}.new-chat{width:100%;display:flex;align-items:center;gap:10px;text-align:left;background:transparent;border:1px solid var(--line);border-radius:11px;padding:10px 12px;font-size:14px}.new-chat:hover{background:#eee}.side-label{font-size:12px;color:#777;font-weight:600;margin:24px 8px 8px}.side-item{display:flex;align-items:center;gap:10px;width:100%;padding:9px 10px;border:0;border-radius:9px;background:transparent;text-align:left;font-size:14px;color:#333}.side-item:hover{background:#eee}.side-spacer{flex:1}.side-note{font-size:11px;color:#878787;padding:12px 8px 4px}.main{flex:1;min-width:0;height:100%;display:flex;flex-direction:column;position:relative;background:#fff}.topbar{height:56px;flex:0 0 56px;display:flex;align-items:center;gap:9px;padding:0 18px;border-bottom:1px solid #f1f1f1;background:#ffffffed;z-index:3}.topbar .icon-button{margin-left:-7px}.title{font-size:14px;font-weight:600;letter-spacing:-.015em;white-space:nowrap}.version{font-size:10px;font-weight:700;letter-spacing:.045em;color:#777;background:#f4f4f4;border-radius:5px;padding:3px 5px;margin-left:2px}.top-spacer{flex:1}.online-dot{height:6px;width:6px;border-radius:50%;background:#7a7a7a;display:inline-block}.status-label{font-size:11px;color:#777;display:flex;align-items:center;gap:6px}.thread{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:28px 20px 22px;scroll-behavior:smooth}.thread-inner{max-width:760px;width:100%;margin:0 auto;min-height:100%;display:flex;flex-direction:column}.welcome{margin:auto auto 26px;width:100%;max-width:650px;padding:28px 0 16px;text-align:center}.welcome-mark{width:42px;height:42px;margin:0 auto 18px;border:1px solid #e1e1e1;border-radius:15px;display:grid;place-items:center;font-weight:800;background:#fff;box-shadow:var(--shadow)}.welcome h1{font-size:clamp(23px,3vw,30px);font-weight:550;letter-spacing:-.045em;line-height:1.25;margin:0 0 8px}.welcome p{font-size:14px;color:var(--muted);margin:0 auto;max-width:450px}.suggestions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:25px;text-align:left}.suggestion{border:1px solid var(--line);background:#fff;border-radius:13px;padding:12px 13px;color:#414141;font-size:13px;text-align:left;min-height:66px}.suggestion:hover{background:#fafafa;border-color:#cfcfcf}.suggestion strong{display:block;font-size:13px;font-weight:600;color:#222;margin-bottom:2px}.message-row{display:flex;flex-direction:column;margin:0 0 25px;animation:appear .18s ease-out}.user-row{align-items:flex-end}.assistant-row{align-items:flex-start}.user-bubble{max-width:min(80%,570px);background:var(--user);border-radius:22px;padding:11px 17px;white-space:pre-wrap;overflow-wrap:anywhere}.assistant-block{width:100%;max-width:680px;padding:2px 0 5px;overflow-wrap:anywhere}.assistant-head{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:650;margin-bottom:12px}.assistant-mark{height:26px;width:26px;display:grid;place-items:center;border:1px solid #e4e4e4;border-radius:9px;font-size:11px;font-weight:800}.subtle{font-size:11px;font-weight:500;color:#858585}.result-intro{font-size:14px;color:#3d3d3d;margin:0 0 13px}.result-title{font-size:13px;font-weight:650;margin:17px 0 9px}.intent-list{display:flex;flex-wrap:wrap;gap:8px}.intent-chip{display:inline-flex;align-items:center;gap:8px;background:#f6f6f6;border:1px solid #e8e8e8;border-radius:10px;padding:8px 10px;font-size:12px;color:#262626}.intent-chip .score{font-variant-numeric:tabular-nums;color:#646464;font-size:11px}.candidate-list{display:grid;gap:8px}.candidate{display:grid;grid-template-columns:minmax(95px,160px) minmax(50px,1fr) 45px;gap:10px;align-items:center;font-size:12px}.candidate-name{overflow-wrap:anywhere;color:#404040}.track{height:6px;background:#eeeeee;border-radius:99px;overflow:hidden}.track-fill{height:100%;background:#777;border-radius:99px}.candidate-score{text-align:right;color:#777;font-variant-numeric:tabular-nums;font-size:11px}.disclaimer{font-size:12px;color:#7b7b7b;margin:12px 0 0}.error-box{border:1px solid #f0c7c4;background:#fff7f6;color:var(--bad);padding:11px 13px;border-radius:11px;font-size:13px}.message-actions{display:flex;gap:7px;margin-top:11px}.text-action{border:0;background:transparent;color:#777;font-size:12px;padding:5px 7px;border-radius:7px}.text-action:hover{background:#f3f3f3;color:#222}.composer-area{flex:0 0 auto;padding:12px 18px max(9px,env(safe-area-inset-bottom));background:linear-gradient(to top,#fff 78%,#ffffffd9);z-index:2}.composer-wrap{max-width:760px;margin:0 auto}.composer{display:flex;align-items:flex-end;gap:10px;width:100%;border:1px solid #d9d9d9;border-radius:27px;padding:9px 10px 9px 18px;box-shadow:0 5px 24px #0000000a;background:#fff;transition:border-color .15s,box-shadow .15s}.composer:focus-within{border-color:#bcbcbc;box-shadow:0 5px 25px #0000000c}.composer textarea{width:100%;min-height:28px;max-height:180px;resize:none;border:0;outline:0;background:transparent;color:var(--text);padding:3px 0;line-height:1.5;font-size:15px}.composer textarea::placeholder{color:#858585}.send{flex:0 0 34px;height:34px;width:34px;border:0;border-radius:50%;background:#171717;color:#fff;display:grid;place-items:center;transition:opacity .15s}.send:hover{background:#363636}.send:disabled{background:#d8d8d8;color:#fff;cursor:not-allowed}.send svg{width:18px;height:18px}.composer-caption{text-align:center;font-size:10px;color:#969696;margin-top:9px}.mobile-scrim{display:none}.about-overlay{position:absolute;inset:0;background:#00000024;z-index:10;display:none;align-items:center;justify-content:center;padding:18px}.about-overlay.open{display:flex}.about-card{width:min(580px,100%);max-height:min(80dvh,720px);overflow-y:auto;background:#fff;border:1px solid #e4e4e4;border-radius:19px;box-shadow:0 18px 80px #0002;padding:23px}.about-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.about-top h2{font-size:19px;letter-spacing:-.03em;margin:0;font-weight:650}.about-copy{color:#555;font-size:14px}.about-copy h3{font-size:13px;color:#202020;margin:21px 0 6px}.about-copy p{margin:7px 0}.pipeline{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:14px 0}.step{font-size:12px;border:1px solid #e3e3e3;background:#f8f8f8;padding:8px 10px;border-radius:9px}.arrow{color:#999;font-size:13px}.about-foot{border-top:1px solid #eee;margin-top:19px;padding-top:13px;display:flex;gap:12px;flex-wrap:wrap}.about-foot a{font-size:12px;color:#505050;text-decoration:none}.about-foot a:hover{text-decoration:underline}.toast{position:absolute;bottom:105px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:8px 13px;border-radius:10px;font-size:12px;display:none;z-index:9;max-width:calc(100% - 24px)}.toast.show{display:block}@keyframes appear{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:1000px){.thread{padding-top:30px}}@media(max-width:700px){.sidebar{position:absolute;z-index:20;top:0;bottom:0;left:0;width:270px;box-shadow:12px 0 34px #0000000c}.sidebar.hidden{margin-left:-285px}.mobile-scrim.open{display:block;position:absolute;z-index:19;inset:0;background:#0003}.topbar{padding:0 13px}.thread{padding:24px 17px 16px}.welcome{padding-top:20px}.suggestions{grid-template-columns:1fr}.suggestion{min-height:0}.user-bubble{max-width:90%}.composer-area{padding-left:12px;padding-right:12px}.candidate{grid-template-columns:minmax(80px,120px) minmax(35px,1fr) 40px;gap:7px}.about-card{padding:18px}}@media(max-height:650px){.welcome{margin-top:20px}.thread{padding-top:15px}.suggestions{margin-top:15px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar hidden" id="sidebar" aria-label="Navigation">
+    <div class="side-top"><div class="brandmark" aria-label="AXU">A</div><button class="icon-button" id="closeSidebar" aria-label="Close sidebar" title="Close sidebar"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="4" width="17" height="16" rx="2.5"/><path d="M9 4v16"/></svg></button></div>
+    <button class="new-chat" id="newChat"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg><span>New chat</span></button>
+    <div class="side-label">Workspace</div>
+    <button class="side-item" id="aboutButton"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5h.01"/></svg><span>About AXU Intelligence</span></button>
+    <a class="side-item" href="/docs" style="text-decoration:none"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 3.5h7l4 4V20a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1Z"/><path d="M14 3.5V8h4M9 12h6M9 16h6"/></svg><span>API documentation</span></a>
+    <div class="side-spacer"></div>
+    <div class="side-note">Experimental build · AXU Studio</div>
+  </aside>
+  <div class="mobile-scrim" id="scrim"></div>
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-button" id="openSidebar" aria-label="Open sidebar" title="Open menu"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></svg></button>
+      <div class="title">AXU Interaction Intelligence</div><span class="version">V2</span>
+      <div class="top-spacer"></div><div class="status-label"><span class="online-dot"></span><span id="apiStatus">Ready</span></div>
+    </header>
+    <section class="thread" id="thread" aria-live="polite">
+      <div class="thread-inner" id="threadInner">
+        <section class="welcome" id="welcome">
+          <div class="welcome-mark">A</div>
+          <h1>What would you like to understand?</h1>
+          <p>Send a message and AXU Intelligence V2 will predict its likely intent.</p>
+          <div class="suggestions">
+            <button class="suggestion" data-prompt="Hii, how are you?"><strong>Try a greeting</strong>Hii, how are you?</button>
+            <button class="suggestion" data-prompt="The app crashes whenever I try to log in."><strong>Try a bug report</strong>The app crashes when I log in.</button>
+            <button class="suggestion" data-prompt="Could you add an offline mode to the app?"><strong>Try a feature request</strong>Could you add an offline mode?</button>
+            <button class="suggestion" data-prompt="I like the design, but the search is too slow."><strong>Try mixed feedback</strong>I like the design, but search is slow.</button>
+          </div>
+        </section>
+      </div>
+    </section>
+    <div class="composer-area">
+      <div class="composer-wrap">
+        <form class="composer" id="composerForm">
+          <textarea id="message" rows="1" maxlength="5000" placeholder="Message AXU Intelligence…" aria-label="Your message"></textarea>
+          <button class="send" id="sendButton" type="submit" aria-label="Send message" title="Send message" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+        </form>
+        <div class="composer-caption">Intent predictions can be wrong. Don't enter private or sensitive information.</div>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <div class="about-overlay" id="aboutOverlay" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+      <section class="about-card">
+        <div class="about-top"><h2 id="aboutTitle">About AXU Intelligence V2</h2><button class="icon-button" id="closeAbout" aria-label="Close About"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+        <div class="about-copy">
+          <p><strong>AXU Interaction Intelligence V2</strong> is an experimental text-intent prediction system. It analyses a message and ranks likely intent labels, such as greetings, questions, bug reports, feature requests, or mixed feedback.</p>
+          <h3>How it works today</h3>
+          <div class="pipeline"><span class="step">Incoming message</span><span class="arrow">→</span><span class="step">Intent prediction</span><span class="arrow">→</span><span class="step">Ranked labels</span></div>
+          <p>The current model is a classifier, not a generative large language model (LLM). Its scores are model outputs, not guaranteed probabilities, and it can misunderstand a message.</p>
+          <h3>Where we're taking it</h3>
+          <div class="pipeline"><span class="step">Predict intent</span><span class="arrow">→</span><span class="step">Select a response or action</span><span class="arrow">→</span><span class="step">Return a reply</span></div>
+          <p>Our planned next step is to use predicted intent to select an appropriate response, template, or tool, then show that response in the conversation. We'll test it against labelled examples and improve its handling of multiple intents and uncertain predictions.</p>
+          <p>The longer-term goal is a more capable conversational system. Intent routing and response selection are useful building blocks, but they do not alone make a system an LLM; generating flexible new language would require a generative model and additional training and evaluation.</p>
+          <h3>Prototype status</h3>
+          <p>This is an ongoing research prototype. The training examples are synthetic, so real-world performance still needs careful testing before the system is relied on.</p>
+        </div>
+        <div class="about-foot"><a href="/docs">API docs</a><a href="/metadata">Model metadata</a><a href="/health">API health</a></div>
+      </section>
+    </div>
+  </main>
+</div>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const sidebar = $('sidebar'), scrim = $('scrim'), thread = $('thread'), threadInner = $('threadInner');
+  const messageBox = $('message'), sendButton = $('sendButton');
+  let busy = false;
+
+  function showToast(text) {
+    const toast = $('toast'); toast.textContent = text; toast.classList.add('show');
+    window.clearTimeout(showToast.timer); showToast.timer = window.setTimeout(() => toast.classList.remove('show'), 2500);
+  }
+  function openMenu() { sidebar.classList.remove('hidden'); if (window.matchMedia('(max-width: 700px)').matches) scrim.classList.add('open'); }
+  function closeMenu() { sidebar.classList.add('hidden'); scrim.classList.remove('open'); }
+  $('openSidebar').addEventListener('click', () => sidebar.classList.contains('hidden') ? openMenu() : closeMenu());
+  $('closeSidebar').addEventListener('click', closeMenu);
+  scrim.addEventListener('click', closeMenu);
+  $('aboutButton').addEventListener('click', () => { $('aboutOverlay').classList.add('open'); closeMenu(); });
+  $('closeAbout').addEventListener('click', () => $('aboutOverlay').classList.remove('open'));
+  $('aboutOverlay').addEventListener('click', (event) => { if (event.target === $('aboutOverlay')) $('aboutOverlay').classList.remove('open'); });
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { $('aboutOverlay').classList.remove('open'); closeMenu(); } });
+
+  function scrollToBottom() { requestAnimationFrame(() => { thread.scrollTop = thread.scrollHeight; }); }
+  function appendUserMessage(text) {
+    const currentWelcome = $('welcome'); if (currentWelcome) currentWelcome.remove();
+    const row = document.createElement('div'); row.className = 'message-row user-row';
+    const bubble = document.createElement('div'); bubble.className = 'user-bubble'; bubble.textContent = text;
+    row.appendChild(bubble); threadInner.appendChild(row); scrollToBottom();
+  }
+  function addError(message) {
+    const row = document.createElement('div'); row.className = 'message-row assistant-row';
+    const block = document.createElement('div'); block.className = 'assistant-block';
+    const head = document.createElement('div'); head.className = 'assistant-head';
+    const mark = document.createElement('span'); mark.className = 'assistant-mark'; mark.textContent = 'A';
+    const label = document.createElement('span'); label.textContent = 'AXU Intelligence'; head.append(mark,label);
+    const error = document.createElement('div'); error.className = 'error-box'; error.textContent = message;
+    block.append(head,error); row.append(block); threadInner.append(row); scrollToBottom();
+  }
+  function appendResult(data) {
+    const row = document.createElement('div'); row.className = 'message-row assistant-row';
+    const block = document.createElement('div'); block.className = 'assistant-block';
+    const head = document.createElement('div'); head.className = 'assistant-head';
+    const mark = document.createElement('span'); mark.className = 'assistant-mark'; mark.textContent = 'A';
+    const heading = document.createElement('span'); heading.textContent = 'AXU Intelligence'; head.append(mark, heading);
+    const version = document.createElement('span'); version.className = 'subtle';
+    if (data.model || data.model_version) version.textContent = [data.model, data.model_version ? `v${data.model_version}` : ''].filter(Boolean).join(' · ');
+    head.append(version); block.append(head);
+
+    const intro = document.createElement('p'); intro.className = 'result-intro'; intro.textContent = 'Here is the intent prediction for your message.'; block.append(intro);
+    const labelsTitle = document.createElement('div'); labelsTitle.className = 'result-title'; labelsTitle.textContent = 'Detected intents'; block.append(labelsTitle);
+    const labels = document.createElement('div'); labels.className = 'intent-list';
+    const detected = Array.isArray(data.labels) ? data.labels : [];
+    if (detected.length) {
+      detected.forEach(item => {
+        const chip = document.createElement('span'); chip.className = 'intent-chip';
+        const name = document.createElement('span'); name.textContent = String(item.label ?? 'Unknown intent');
+        const score = document.createElement('span'); score.className = 'score'; score.textContent = Number.isFinite(Number(item.score)) ? Number(item.score).toFixed(3) : '—';
+        chip.append(name,score); labels.append(chip);
+      });
+    } else {
+      const empty = document.createElement('span'); empty.className = 'subtle'; empty.textContent = 'No labels crossed the selected threshold.'; labels.append(empty);
+    }
+    block.append(labels);
+
+    const candidates = Array.isArray(data.candidates) ? data.candidates : [];
+    if (candidates.length) {
+      const candidatesTitle = document.createElement('div'); candidatesTitle.className = 'result-title'; candidatesTitle.textContent = 'Top candidate scores'; block.append(candidatesTitle);
+      const note = document.createElement('p'); note.className = 'disclaimer'; note.textContent = 'Scores are relative model outputs, not calibrated probabilities.'; block.append(note);
+      const list = document.createElement('div'); list.className = 'candidate-list';
+      candidates.forEach(item => {
+        const rowItem = document.createElement('div'); rowItem.className = 'candidate';
+        const name = document.createElement('span'); name.className = 'candidate-name'; name.textContent = String(item.label ?? 'Unknown intent');
+        const track = document.createElement('div'); track.className = 'track';
+        const fill = document.createElement('div'); fill.className = 'track-fill';
+        const rawScore = Number(item.score); const safeScore = Number.isFinite(rawScore) ? Math.max(0, Math.min(1, rawScore)) : 0;
+        fill.style.width = `${safeScore * 100}%`; track.append(fill);
+        const score = document.createElement('span'); score.className = 'candidate-score'; score.textContent = Number.isFinite(rawScore) ? rawScore.toFixed(3) : '—';
+        rowItem.append(name,track,score); list.append(rowItem);
+      });
+      block.append(list);
+    }
+    if (data.note) { const note = document.createElement('p'); note.className = 'disclaimer'; note.textContent = String(data.note); block.append(note); }
+    const actions = document.createElement('div'); actions.className = 'message-actions';
+    const copy = document.createElement('button'); copy.className = 'text-action'; copy.textContent = 'Copy results';
+    copy.addEventListener('click', async () => {
+      const summary = `AXU Interaction Intelligence V2\nDetected intents:\n${detected.map(x => `${x.label}: ${Number(x.score).toFixed(3)}`).join('\n')}\nTop candidates:\n${candidates.map(x => `${x.label}: ${Number(x.score).toFixed(3)}`).join('\n')}`;
+      try { await navigator.clipboard.writeText(summary); showToast('Results copied'); }
+      catch { showToast('Clipboard unavailable in this browser'); }
+    });
+    actions.append(copy); block.append(actions); row.append(block); threadInner.append(row); scrollToBottom();
+  }
+  function autoSize() { messageBox.style.height = 'auto'; messageBox.style.height = `${Math.min(messageBox.scrollHeight, 180)}px`; sendButton.disabled = busy || !messageBox.value.trim(); }
+  messageBox.addEventListener('input', autoSize);
+  messageBox.addEventListener('keydown', (event) => { if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) { event.preventDefault(); $('composerForm').requestSubmit(); } });
+  document.querySelectorAll('[data-prompt]').forEach(button => button.addEventListener('click', () => { messageBox.value = button.dataset.prompt || ''; autoSize(); $('composerForm').requestSubmit(); }));
+  $('newChat').addEventListener('click', () => {
+    threadInner.replaceChildren();
+    const intro = document.createElement('section'); intro.className = 'welcome'; intro.id = 'welcome';
+    const mark = document.createElement('div'); mark.className = 'welcome-mark'; mark.textContent = 'A';
+    const title = document.createElement('h1'); title.textContent = 'What would you like to understand?';
+    const desc = document.createElement('p'); desc.textContent = 'Send a message and AXU Intelligence V2 will predict its likely intent.';
+    const suggestions = document.createElement('div'); suggestions.className = 'suggestions';
+    [['Try a greeting','Hii, how are you?'],['Try a bug report','The app crashes when I log in.'],['Try a feature request','Could you add an offline mode?'],['Try mixed feedback','I like the design, but search is slow.']].forEach(([titleText,prompt]) => {
+      const b = document.createElement('button'); b.className = 'suggestion'; b.dataset.prompt = prompt;
+      const strong = document.createElement('strong'); strong.textContent = titleText; b.append(strong,document.createTextNode(prompt));
+      b.addEventListener('click', () => { messageBox.value = prompt; autoSize(); $('composerForm').requestSubmit(); }); suggestions.append(b);
+    });
+    intro.append(mark,title,desc,suggestions); threadInner.append(intro); closeMenu(); messageBox.value=''; autoSize(); messageBox.focus(); thread.scrollTop=0;
+  });
+
+  $('composerForm').addEventListener('submit', async (event) => {
+    event.preventDefault(); if (busy) return;
+    const text = messageBox.value.trim(); if (!text) return;
+    busy = true; const submitText = text; messageBox.value = ''; autoSize(); appendUserMessage(submitText);
+    sendButton.disabled = true; $('apiStatus').textContent = 'Thinking…';
+    try {
+      const response = await fetch('/predict', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({text:submitText, threshold:0.45, top_k:8}) });
+      let data; try { data = await response.json(); } catch { throw new Error('The API returned an unreadable response.'); }
+      if (!response.ok) throw new Error(typeof data.detail === 'string' ? data.detail : 'Prediction request failed. Please try again.');
+      appendResult(data); $('apiStatus').textContent = 'Ready';
+    } catch (error) {
+      addError(`${error.message || 'Could not reach the prediction API.'} Check that the API is running and try again.`); $('apiStatus').textContent = 'Connection issue';
+    } finally { busy = false; autoSize(); messageBox.focus(); }
+  });
+  autoSize();
+})();
+</script>
+</body>
+</html>
